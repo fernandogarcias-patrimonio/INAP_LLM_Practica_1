@@ -74,7 +74,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1508849789987-4e5333c12b78?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('san-saturio.jpg') no-repeat center center/cover;
             height: 60vh;
             display: flex;
             justify-content: center;
@@ -154,7 +154,8 @@
 
         .img-box img {
             width: 100%;
-            height: auto;
+            height: 400px; /* Forzamos misma altura para armonía visual */
+            object-fit: cover; /* Recorta la imagen limpiamente sin deformarla */
             display: block;
             transition: transform 0.5s;
         }
@@ -230,7 +231,7 @@
         </div>
     </header>
 
-    <!-- Sección de Bienvenida (Hero) -->
+    <!-- Sección de Bienvenida (Hero) con fondo de San Saturio -->
     <section class="hero">
         <div>
             <h1>Soria, ni te la imaginas</h1>
@@ -246,25 +247,23 @@
                 <h2>Soria Pura Cabeza de Estremadura</h2>
                 <p>Ubicada a orillas del río Duero, Soria es una ciudad que invita a pasear despacio. Inspiración de poetas como Gustavo Adolfo Bécquer, Antonio Machado o Gerardo Diego, es famosa por su románico, su gastronomía y su calma.</p>
                 <br>
-                <p>Desde los arcos de San Juan de Duero hasta la ermita de San Saturio colgada sobre la roca, Soria conserva el encanto místico de las tierras altas de Castilla.</p>
+                <p>Desde los imponentes arcos claustrales de San Juan de Duero hasta la emblemática ermita de San Saturio colgada sobre la roca del río, Soria conserva el encanto místico de las tierras altas de Castilla.</p>
             </div>
             <div class="img-box">
-                <!-- Foto orientativa de Soria / Río Duero -->
-                <img src="https://images.unsplash.com/photo-1543872084-c7bd3822856f?auto=format&fit=crop&w=600&q=80" alt="Paisaje de Soria">
+                <img src="san-juan-duero.jpg" alt="Arcos del Monasterio de San Juan de Duero en Soria">
             </div>
         </section>
 
         <!-- Sección 2: Numancia -->
         <section id="numancia" class="grid-2">
             <div class="img-box">
-                <!-- Foto de ruinas arqueológicas -->
-                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80" alt="Yacimiento de Numancia">
+                <img src="numancia.jpg" alt="Yacimiento arqueológico y reconstrucción en Numancia">
             </div>
             <div>
                 <h2>La Resistencia de Numancia</h2>
                 <p>A escasos kilómetros de la capital actual se alzan los restos de <strong>Numancia</strong>, una heroica ciudad celtíbera que desafió al mismísimo Imperio Romano. En el año 133 a.C., tras más de una década de resistencia y un asedio implacable del general Escipión, sus habitantes prefirieron la muerte antes que la esclavitud.</p>
                 <br>
-                <p>Este hito forjó el mito de la "resistencia numantina", un símbolo de tenacidad que hoy en día sigue corriendo por las venas de los sorianos.</p>
+                <p>Este hito forjó el mito de la "resistencia numantina", un símbolo de tenacidad, libertad y orgullo que hoy en día sigue corriendo por las venas de los habitantes de la provincia.</p>
             </div>
         </section>
 
@@ -272,13 +271,12 @@
         <section id="caballito" class="grid-2">
             <div>
                 <h2>El Caballito Numantino</h2>
-                <p>Si viajas por carretera y ves un coche con una pegatina de un pequeño caballo con tres patas apoyadas y círculos concéntricos, estás ante un soriano. Es el <strong>Caballito de Soria</strong>.</p>
+                <p>Si viajas por carretera en España y ves un coche con una pegatina de un pequeño caballo con tres patas apoyadas y círculos concéntricos, estás ante un soriano. Es el famoso <strong>Caballito de Soria</strong>.</p>
                 <br>
-                <p>Este icono es en realidad una fíbula (un imperdible de bronce para sujetar la ropa) celtíbera del siglo III a.C. hallada en las excavaciones de Numancia. Representa a un caballo, animal sagrado y militar para los celtíberos. Hoy en día es el mayor símbolo de orgullo e identidad de toda la provincia.</p>
+                <p>Este icono es en realidad una fíbula (un broche o imperdible de bronce utilizado para sujetar la capa) de origen celtíbero, datada en el siglo III a.C. y hallada en las excavaciones del yacimiento de Numancia. Representa a un caballo, un animal con un fuerte valor sagrado y militar para los celtíberos. Hoy en día se ha convertido en el mayor amuleto de identidad de toda la provincia.</p>
             </div>
             <div class="img-box">
-                <!-- Foto conceptual de herencia celtíbera / caballo de metal -->
-                <img src="https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=600&q=80" alt="Símbolo del Caballito">
+                <img src="caballito.jpg" alt="Fíbula original del Caballito Numantino de Soria">
             </div>
         </section>
 
