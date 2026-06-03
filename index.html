@@ -3,12 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title>
+    <title>Soria: Tierra de Historia y Leyenda</title>
+    <style>
+        /* Variables de color temáticas */
+        :root {
+            --color-principal: #8B2617; /* Rojo arcilla / Numantino */
+            --color-secundario: #D4A373; /* Dorado piedra / Otoño */
+            --color-oscuro: #2B2D42;
+            --color-claro: #FAF0E6; /* Blanco hueso / pergamino */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--color-claro);
+            color: var(--color-oscuro);
+        }
+
+        /* Navegación */
+        header {
+            background-color: var(--color-principal);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--color-secundario);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1508849789987-4e5333c12b78?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        /* Contenedor Principal */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--color-principal);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-secundario);
+            margin-top: 8px;
+        }
+
+        /* Dos columnas para contenido con foto */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-container { flex-direction: column; }
+            nav ul { margin-top: 15px; }
+        }
+
+        .img-box {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .img-box img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Enlaces de interés */
+        .links-interes {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+
+        .links-interes ul {
+            list-style-type: "📍 ";
+            padding-left: 20px;
+        }
+
+        .links-interes li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .links-interes a {
+            color: var(--color-principal);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .links-interes a:hover {
+            text-decoration: underline;
+            color: var(--color-secundario);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-oscuro);
+            color: #a0a2ad;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--color-principal);
+        }
+
+        footer .autor {
+            color: white;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>¡Hola, mundo!</h1>
-    <p>Este es un sitio HTML básico.</p>
+    <!-- Navegación Interna -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Soria Mágica</div>
+            <nav>
+                <ul>
+                    <li><a href="#ciudad">La Ciudad</a></li>
+                    <li><a href="#numancia">Numancia</a></li>
+                    <li><a href="#caballito">El Caballito</a></li>
+                    <li><a href="#enlaces">Enlaces</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Bienvenida (Hero) -->
+    <section class="hero">
+        <div>
+            <h1>Soria, ni te la imaginas</h1>
+            <p>Donde la historia se funde con la leyenda</p>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Sección 1: La Ciudad -->
+        <section id="ciudad" class="grid-2">
+            <div>
+                <h2>Soria Pura Cabeza de Estremadura</h2>
+                <p>Ubicada a orillas del río Duero, Soria es una ciudad que invita a pasear despacio. Inspiración de poetas como Gustavo Adolfo Bécquer, Antonio Machado o Gerardo Diego, es famosa por su románico, su gastronomía y su calma.</p>
+                <br>
+                <p>Desde los arcos de San Juan de Duero hasta la ermita de San Saturio colgada sobre la roca, Soria conserva el encanto místico de las tierras altas de Castilla.</p>
+            </div>
+            <div class="img-box">
+                <!-- Foto orientativa de Soria / Río Duero -->
+                <img src="https://images.unsplash.com/photo-1543872084-c7bd3822856f?auto=format&fit=crop&w=600&q=80" alt="Paisaje de Soria">
+            </div>
+        </section>
+
+        <!-- Sección 2: Numancia -->
+        <section id="numancia" class="grid-2">
+            <div class="img-box">
+                <!-- Foto de ruinas arqueológicas -->
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80" alt="Yacimiento de Numancia">
+            </div>
+            <div>
+                <h2>La Resistencia de Numancia</h2>
+                <p>A escasos kilómetros de la capital actual se alzan los restos de <strong>Numancia</strong>, una heroica ciudad celtíbera que desafió al mismísimo Imperio Romano. En el año 133 a.C., tras más de una década de resistencia y un asedio implacable del general Escipión, sus habitantes prefirieron la muerte antes que la esclavitud.</p>
+                <br>
+                <p>Este hito forjó el mito de la "resistencia numantina", un símbolo de tenacidad que hoy en día sigue corriendo por las venas de los sorianos.</p>
+            </div>
+        </section>
+
+        <!-- Sección 3: El Caballito de Soria -->
+        <section id="caballito" class="grid-2">
+            <div>
+                <h2>El Caballito Numantino</h2>
+                <p>Si viajas por carretera y ves un coche con una pegatina de un pequeño caballo con tres patas apoyadas y círculos concéntricos, estás ante un soriano. Es el <strong>Caballito de Soria</strong>.</p>
+                <br>
+                <p>Este icono es en realidad una fíbula (un imperdible de bronce para sujetar la ropa) celtíbera del siglo III a.C. hallada en las excavaciones de Numancia. Representa a un caballo, animal sagrado y militar para los celtíberos. Hoy en día es el mayor símbolo de orgullo e identidad de toda la provincia.</p>
+            </div>
+            <div class="img-box">
+                <!-- Foto conceptual de herencia celtíbera / caballo de metal -->
+                <img src="https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=600&q=80" alt="Símbolo del Caballito">
+            </div>
+        </section>
+
+        <!-- Sección 4: Enlaces Externos -->
+        <section id="enlaces">
+            <h2>Planifica tu visita</h2>
+            <p>Si te has quedado con ganas de descubrir más sobre esta increíble provincia, te recomiendo echar un vistazo a los canales oficiales:</p>
+            
+            <div class="links-interes">
+                <ul>
+                    <li>Descubre la oferta turística oficial en la <a href="https://www.turismosoria.es/" target="_blank" rel="noopener">Web de Turismo de Soria</a>.</li>
+                    <li>Aprende más sobre la historia del yacimiento en la página del <a href="http://www.numanciasoria.es/" target="_blank" rel="noopener">Yacimiento Arqueológico de Numancia</a>.</li>
+                    <li>Sigue las últimas noticias de la provincia en <a href="https://desdeSoria.es" target="_blank" rel="noopener">DesdeSoria</a>.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- El Footer solicitado con los datos del alumno -->
+    <footer>
+        <p>&copy; 2026 Descubre Soria. Proyecto práctico de Programación Web mediante LLM.</p>
+        <p>Diseño y desarrollo realizado por:</p>
+        <span class="autor">Juan España Madrid</span>
+    </footer>
 
 </body>
 </html>
